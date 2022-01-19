@@ -1,0 +1,15 @@
+<h1>Hello there!</h1>
+
+<div>
+    <button (click)="createNewPost()">New Thought...</button>
+    <div *ngIf="newPostMode">
+        Title: <input type="text" [(ngModel)]="newTitle"><br>
+        Post: <input type="text" [(ngModel)]="newThought"><br>
+        <button (click)="savePost()">Save</button>
+    </div>
+</div>
+<br>
+
+<ng-container *ngFor="let post of posts">
+    <app-socialposts [post]="post"></app-socialposts>
+  </ng-container>
